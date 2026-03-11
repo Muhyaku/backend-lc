@@ -98,6 +98,11 @@ app.get('/api/laporan', async (req, res) => {
   } catch (error) { res.status(500).json({ status: "error" }); }
 });
 
+// Rute Halaman Utama biar Vercel gak bingung
+app.get('/', (req, res) => {
+  res.send('🚀 Backend IntensifApp Dede BERJALAN LANCAR DI VERCEL!');
+});
+
 // Tambahkan ini di baris paling bawah banget:
 module.exports = app;
 
